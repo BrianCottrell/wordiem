@@ -104,6 +104,8 @@ p {
   line-height: 40px; }
 
 .definition-container {
+  position: absolute;
+  border-radius: 3px;
   width: 50%;
   padding: 20px;
   background-color: #e2ffe2;
