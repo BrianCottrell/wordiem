@@ -172,6 +172,6 @@ document.getElementsByClassName('vocabulary-button')[0].addEventListener('click'
 	}
 });
 document.getElementsByClassName('info')[0].addEventListener('click', function(){
-	alert('- highlighted words are the words that you dont know\n	- click for definition\n	-double click if you know the word\n	-click on text audio for audio reading\n	-click on vocabulary for a list of the words that you know.\n	5 minutes ago\n	- The blue words are the words that you do not know\n	- Click on the word for the definition\n	- Double click the word if you know the word.\n	- Click on the “Text Audio” for Assisted Audio reading\n	- Click on “My Vocabulary” for a list of the words that you know.');
+	alert('	- The blue words are the words that you do not know\n	- Click on the word for the definition\n	- Double click the word if you know the word.\n	- Click on the “Text Audio” for Assisted Audio reading\n	- Click on “My Vocabulary” for a list of the words that you know.');
 });
 updateVocabulary();
