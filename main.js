@@ -19,14 +19,14 @@ function writeText(){
 	while (document.getElementsByClassName('text-container')[0].firstChild) {
     	document.getElementsByClassName('text-container')[0].removeChild(document.getElementsByClassName('text-container')[0].firstChild);
 	}
-	text = document.getElementsByClassName('image-text')[0].innerHTML.replace('\n', ' ').replace('\r', ' ').split(' ');
+	text = document.getElementsByClassName('image-text')[0].innerHTML.split(' ');
 	var words = [];
 	for(var i = 0; i < text.length; i++){
 		var word = document.createElement('p');
 		word.innerHTML = text[i]+' ';
 		word.classList.add('highlighted');
 		for(var j = 0; j < knownWordList.length; j++){
-			if(text[i] == knownWordList[j] || text[i].length < 6){
+			if(text[i] == knownWordList[j] || text[i].length < 6 || !allLetter(text[i].slice(0, text[i].length-1))){
 				word.classList.remove('highlighted');
 			}
 		}
@@ -64,6 +64,16 @@ function writeText(){
 		document.getElementsByClassName('text-container')[0].appendChild(word);
 	}
 }
+function allLetter(inputtxt){  
+	var letters = /^[A-Za-z]+$/;  
+	if(inputtxt.match(letters)){  
+		return true;
+	}  
+	else
+	{  
+		return false;  
+	}  
+} 
 document.getElementsByClassName('url-input')[0].value = 'http://www.rjionline.org/sites/default/files/images/the_text_column_should_satisfy_four_conditions.jpeg'
 document.getElementsByClassName('url-button')[0].addEventListener('click', function(){
 	var xmlhttp = new XMLHttpRequest();
@@ -92,17 +102,20 @@ document.getElementsByClassName('speech-button')[0].addEventListener('click', fu
 	for(var i = 0; i < text.length; i++){
 		var wordKnown = false;
 		for(var j = 0; j < knownWords.length; j++){
-			if(text[i] == knownWords[j] || text[i].length < 6){
+			if(text[i] == knownWords[j] || text[i].length < 6 || !allLetter(text[i].slice(0, text[i].length-1))){
 				wordKnown = true;
 			}
 		}
 		if(wordKnown){
 			wordGroup+=text[i]+' ';
 		}else{
-			wordGroup+=text[i]
+			wordGroup+=text[i];
 			knownWords.push(wordGroup);
 			wordGroup = '';
 			unknownWords.push(text[i]);
+		}
+		if(i == text.length-1){
+			knownWords.push(wordGroup);
 		}
 	}
 	function addDefinition(){
@@ -111,7 +124,9 @@ document.getElementsByClassName('speech-button')[0].addEventListener('click', fu
 		xmlhttp.onreadystatechange = function() {
 		    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		    	var response = JSON.parse(xmlhttp.responseText);
-		        unknownWords[index] = response.documents[0].summary.slice(0, response.documents[0].summary.indexOf('.'));
+		        if(response.documents[0]){
+		        	unknownWords[index] = response.documents[0].summary.slice(0, response.documents[0].summary.indexOf('.'));
+		        }
 		        index++;
 				if(index < unknownWords.length){
 					addDefinition();
@@ -125,7 +140,11 @@ document.getElementsByClassName('speech-button')[0].addEventListener('click', fu
 						msg.pitch = 2;
 						msg.rate = 1.5;
 						msg.text = unknownWords[i];
-						window.speechSynthesis.speak(msg);
+						if(i > 0 && msg != undefined){
+							window.speechSynthesis.speak(msg);
+						}
+						console.log(knownWords);
+						console.log(unknownWords);
 					}
 				}
 		    }
