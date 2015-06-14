@@ -4,7 +4,7 @@ html {
 body {
   font-family: "open sans", sans-serif; }
 
-.logotype {
+.logotype, .logo {
   text-align: center;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 5em;
@@ -59,6 +59,7 @@ p {
   display: none; }
 
 .url-input {
+  margin-bottom: 2px;
   background-color: #666;
   color: #fff;
   font-family: inherit;
@@ -80,9 +81,25 @@ p {
   margin-top: 10px;
   right: 10%; }
 
-@media (min-width: 850px) {
+@media (max-width: 690px) {
+  .logotype {
+    display: none; }
+
+  .logo {
+    display: block; }
+
+  .enter-text, .url-button, .capture-button, .photo-button, .speech-button, .vocabulary-button {
+    margin: 2px 0;
+    width: 100%; } }
+@media (min-width: 763px) {
+  .logotype {
+    display: block; }
+
+  .logo {
+    display: none; }
+
   .url-button {
-    width: 33%; }
+    width: 32%; }
 
   .capture-button {
     width: 33%; }
@@ -97,6 +114,7 @@ p {
   color: #00c5d4; }
 
 .text-container, .vocabulary-list {
+  margin-top: 10px;
   width: inherit;
   padding: 50px 60px;
   background-color: #666;
