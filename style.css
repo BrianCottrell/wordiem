@@ -1,3 +1,12 @@
+.wrapper {
+  margin: 10px;
+  padding: 10px; }
 
+textarea {
+  background-color: #333;
+  color: #fff; }
+
+.image-text {
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

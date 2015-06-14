@@ -1,0 +1,17 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$white: #fff;
+$textarea-color: $white;
+
+.wrapper {
+    margin: 10px;
+    padding: 10px;
+}
+textarea {
+ background-color: $primary-color;
+ color: $white;
+}
+
+.image-text {
+    width: 100%;
+}
