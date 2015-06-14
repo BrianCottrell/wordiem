@@ -1,5 +1,6 @@
-function GetText(){
-  
+var knownWordList = ['the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he'];
+var text;
+function getText(){  
   $.get(
 		"https://api.idolondemand.com/1/api/sync/ocrdocument/v1", 
 		{ 	
@@ -14,11 +15,6 @@ function GetText(){
 		"json"
 	);
 }
-
-window.onload= GetText;
-
-var knownWordList = ['the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he'];
-var text;
 function writeText(){
 	while (document.getElementsByClassName('text-container')[0].firstChild) {
     	document.getElementsByClassName('text-container')[0].removeChild(document.getElementsByClassName('text-container')[0].firstChild);
@@ -68,7 +64,6 @@ document.getElementsByClassName('url-input')[0].value = 'http://www.rjionline.or
 document.getElementsByClassName('url-button')[0].addEventListener('click', function(){
 	var xmlhttp = new XMLHttpRequest();
 	var url = "https://api.idolondemand.com/1/api/sync/ocrdocument/v1?apikey=66c1a05f-e956-426f-a0e0-2c2f3756423f&url="+document.getElementsByClassName('url-input')[0].value;
-//  http://www.rjionline.org/sites/default/files/images/the_text_column_should_satisfy_four_conditions.jpeg
 	xmlhttp.onreadystatechange = function() {
 	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 	    	var response = JSON.parse(xmlhttp.responseText);
@@ -78,6 +73,7 @@ document.getElementsByClassName('url-button')[0].addEventListener('click', funct
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
 });
+document.getElementsByClassName('photo-button')[0].addEventListener('click', getText);
 document.getElementsByClassName('enter-text')[0].addEventListener('click', function(){
 	writeText();
 });
