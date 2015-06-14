@@ -136,4 +136,7 @@ p {
   background-color: #e2ffe2;
   color: #000; }
 
+.vocabulary-list{
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
