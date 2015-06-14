@@ -148,7 +148,7 @@ document.getElementsByClassName('speech-button')[0].addEventListener('click', fu
 						msg.text = knownWords[i];
 						window.speechSynthesis.speak(msg);
 						msg = new SpeechSynthesisUtterance();
-						msg.pitch = 2;
+						msg.pitch = 1;
 						msg.text = unknownWords[i];
 						if(i > 0 && msg != undefined){
 							window.speechSynthesis.speak(msg);
