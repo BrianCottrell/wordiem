@@ -12,26 +12,37 @@ body {
 button {
     background-color: $button-color;
     color: $white;
-    display: inline-block;
-      appearance: none;
-      box-shadow: none;
-      border-radius: 0;
-      border: none;
-      padding: 5px;
-      margin: 10px 0;
+    font-family: inherit;
+    font-size: inherit;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    padding: 5px;
+    margin: 10px 0;
 }
 
 .wrapper {
     margin: 10px;
-    padding: 10px;
+    padding: 5% 10%;
 }
 textarea {
- background-color: $primary-color;
- color: $white;
+    background-color: $primary-color;
+    color: $white;
+    font-family: inherit;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 10px;
 }
 
 .image-text {
-    width: 100%;
+    width: 90%;
 }
 
 p{
@@ -44,4 +55,29 @@ p{
 .url-input {
     background-color: $primary-color;
     color: $white;
+    font-family: inherit;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    width: 75%;
+}
+
+.url-button {
+    margin-top: 10px;
+    right: 10%;
+    margin: 0;
+}
+
+.enter-text {
+    float: right;
+}
+
+.text-container {
+    margin-top: 50px;
 }

@@ -4,7 +4,8 @@ body {
 button {
   background-color: #00c5d4;
   color: #fff;
-  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
   appearance: none;
   box-shadow: none;
   border-radius: 0;
@@ -14,14 +15,24 @@ button {
 
 .wrapper {
   margin: 10px;
-  padding: 10px; }
+  padding: 5% 10%; }
 
 textarea {
   background-color: #666;
-  color: #fff; }
+  color: #fff;
+  font-family: inherit;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 10px; }
 
 .image-text {
-  width: 100%; }
+  width: 90%; }
 
 p {
   display: inline; }
@@ -31,6 +42,28 @@ p {
 
 .url-input {
   background-color: #666;
-  color: #fff; }
+  color: #fff;
+  font-family: inherit;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 10px 20px;
+  width: 75%; }
+
+.url-button {
+  margin-top: 10px;
+  right: 10%;
+  margin: 0; }
+
+.enter-text {
+  float: right; }
+
+.text-container {
+  margin-top: 50px; }
 
 /*# sourceMappingURL=style.css.map */
