@@ -59,10 +59,21 @@ function writeText(){
 			this.classList.remove('highlighted');
 			knownWordList.push(this.innerHTML.slice(0,this.innerHTML.length-1));
 			document.getElementsByClassName('definition-container')[0].style.display = 'none';
+			updateVocabulary();
 			writeText();
 		});		
 		document.getElementsByClassName('text-container')[0].appendChild(word);
 	}
+}
+function updateVocabulary(){
+	var list = '';
+	for(var i = 0; i < knownWordList.length; i++){
+		list+=knownWordList[i];
+		if(i < knownWordList.length-1){
+			list+=', ';
+		}
+	}
+	document.getElementsByClassName('vocabulary-list')[0].innerHTML = list;
 }
 function allLetter(inputtxt){  
 	var letters = /^[A-Za-z]+$/;  
@@ -138,7 +149,6 @@ document.getElementsByClassName('speech-button')[0].addEventListener('click', fu
 						window.speechSynthesis.speak(msg);
 						msg = new SpeechSynthesisUtterance();
 						msg.pitch = 2;
-						msg.rate = 1.5;
 						msg.text = unknownWords[i];
 						if(i > 0 && msg != undefined){
 							window.speechSynthesis.speak(msg);
@@ -154,3 +164,11 @@ document.getElementsByClassName('speech-button')[0].addEventListener('click', fu
 	}
 	addDefinition();
 });
+document.getElementsByClassName('vocabulary-button')[0].addEventListener('click', function(){
+	if(document.getElementsByClassName('vocabulary-list')[0].style.display == 'block'){
+		document.getElementsByClassName('vocabulary-list')[0].style.display = 'none';
+	}else{
+		document.getElementsByClassName('vocabulary-list')[0].style.display = 'block';
+	}
+})
+updateVocabulary();
