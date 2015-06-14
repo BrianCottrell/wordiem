@@ -3,6 +3,8 @@ $primary-color: #666;
 $white: #fff;
 $textarea-color: $white;
 $button-color: #00c5d4;
+$popup-bg: #e2ffe2;
+$popup-fontcolor: #000;
 
 body {
     font-family: "open sans", san serif;
@@ -51,6 +53,7 @@ textarea {
 .image-text {
     width: 100%;
     line-height: 30px;
+    font-size: 1.1em;
 }
 
 p{
@@ -86,6 +89,21 @@ p{
     float: right;
 }
 
+.highlighted{
+  color: $button-color;
+}
+
 .text-container {
-    margin-top: 50px;
+    width: 90%;
+    padding: 50px 60px;
+    background-color: $primary-color;
+    color: $textarea-color;
+    line-height: 40px;
+}
+
+.definition-container {
+   
+    padding: 20px;
+    background-color: $popup-bg;
+    color: $popup-fontcolor;
 }

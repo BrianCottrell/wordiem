@@ -39,7 +39,8 @@ textarea {
 
 .image-text {
   width: 100%;
-  line-height: 30px; }
+  line-height: 30px;
+  font-size: 1.1em; }
 
 p {
   display: inline; }
@@ -70,11 +71,19 @@ p {
   margin-right: -20px;
   float: right; }
 
-.text-container {
-  margin-top: 50px; }
+.highlighted {
+  color: #00c5d4; }
 
-.highlighted{
-  color: blue;
-}
+.text-container {
+  width: 90%;
+  padding: 50px 60px;
+  background-color: #666;
+  color: #fff;
+  line-height: 40px; }
+
+.definition-container {
+  padding: 20px;
+  background-color: #e2ffe2;
+  color: #000; }
 
 /*# sourceMappingURL=style.css.map */
