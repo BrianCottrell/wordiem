@@ -9,17 +9,24 @@ body {
 
 }
 
+.logotype {
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 5em;
+    margin-bottom: 0;
+}
+
 button {
     background-color: $button-color;
     color: $white;
     font-family: inherit;
-    font-size: inherit;
+    font-size: .8em;
     appearance: none;
     box-shadow: none;
-    border-radius: 0;
+    border-radius: 3px;
     border: none;
-    padding: 5px;
-    margin: 10px 0;
+    padding: 13px 23px;
+    margin: 10px;
 }
 
 .wrapper {
@@ -38,11 +45,12 @@ textarea {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    padding: 10px;
+    padding: 10px 30px;
 }
 
 .image-text {
-    width: 90%;
+    width: 100%;
+    line-height: 30px;
 }
 
 p{
@@ -64,17 +72,17 @@ p{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    padding: 10px 20px;
+    padding: 13px 20px;
     width: 75%;
 }
 
 .url-button {
     margin-top: 10px;
     right: 10%;
-    margin: 0;
 }
 
 .enter-text {
+    margin-right: -20px;
     float: right;
 }
 
