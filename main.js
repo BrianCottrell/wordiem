@@ -1,6 +1,3 @@
-var msg = new SpeechSynthesisUtterance('Hello World');
-window.speechSynthesis.speak(msg);
-
 var knownWords = ['the','be','to','of','and','a','in','that','have','I','it','for','not','on','with','he'];
 var text;
 function writeText(){
@@ -12,14 +9,14 @@ function writeText(){
 	for(var i = 0; i < text.length; i++){
 		var word = document.createElement('p');
 		word.innerHTML = text[i]+' ';
-		word.style.backgroundColor = 'green';
+		word.classList.add('highlighted');
 		for(var j = 0; j < knownWords.length; j++){
 			if(text[i] == knownWords[j] || text[i].length < 5){
-				word.style.backgroundColor = 'transparent';
+				word.classList.remove('highlighted');
 			}
 		}
 		word.addEventListener('click', function(){
-			if(this.style.backgroundColor != 'transparent'){
+			if(this.classList.contains('highlighted')){
 				document.getElementsByClassName('definition-container')[0].style.display = 'block';
 				var xmlhttp = new XMLHttpRequest();
 				var url = "https://api.idolondemand.com/1/api/sync/querytextindex/v1?apikey=66c1a05f-e956-426f-a0e0-2c2f3756423f&max_page_results=1&summary=quick&text="+this.innerHTML.slice(0,this.innerHTML.length-1);
@@ -40,7 +37,7 @@ function writeText(){
 			document.getElementsByClassName('definition-container')[0].style.display = 'none';
 		});		
 		word.addEventListener('dblclick', function(){
-			this.style.backgroundColor = 'transparent';
+			this.classList.remove('highlighted');
 			knownWords.push(this.innerHTML.slice(0,this.innerHTML.length-1));
 			document.getElementsByClassName('definition-container')[0].style.display = 'none';
 			writeText();
@@ -64,4 +61,41 @@ document.getElementsByClassName('url-button')[0].addEventListener('click', funct
 });
 document.getElementsByClassName('enter-text')[0].addEventListener('click', function(){
 	writeText();
+});
+document.getElementsByClassName('speech-button')[0].addEventListener('click', function(){
+	var audioClips = [];
+	var wordGroup = '';
+	var wordKnown = false;
+	var waiting = false;
+	for(var i = 0; i < text.length; i++){
+		if(waiting){
+			i--;
+		}else{
+			var wordKnown = false;
+			for(var j = 0; j < knownWords.length; j++){
+				if(text[i] == knownWords[j] || text[i].length < 5){
+					wordKnown = true;
+				}
+			}
+			if(wordKnown){
+				wordGroup+=text[i]+' ';
+			}else{
+				audioClips.push(wordGroup);
+				wordGroup = text[i]+' ';
+				var xmlhttp = new XMLHttpRequest();
+				var url = "https://api.idolondemand.com/1/api/sync/querytextindex/v1?apikey=66c1a05f-e956-426f-a0e0-2c2f3756423f&max_page_results=1&summary=quick&text="+text[i];
+				waiting = true;
+				xmlhttp.onreadystatechange = function() {
+				    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				    	var response = JSON.parse(xmlhttp.responseText);
+				        wordGroup+=response.documents[0].summary;
+				        waiting = false;
+				    }
+				}
+				xmlhttp.open("GET", url, true);
+				xmlhttp.send();
+			}
+		}
+	}
+	console.log(audioClips);
 });
