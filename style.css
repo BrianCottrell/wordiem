@@ -1,9 +1,23 @@
+body {
+  font-family: "open sans", san serif; }
+
+button {
+  background-color: #00c5d4;
+  color: #fff;
+  display: inline-block;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  padding: 5px;
+  margin: 10px 0; }
+
 .wrapper {
   margin: 10px;
   padding: 10px; }
 
 textarea {
-  background-color: #333;
+  background-color: #666;
   color: #fff; }
 
 .image-text {

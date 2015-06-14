@@ -1,7 +1,25 @@
 $font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$primary-color: #666;
 $white: #fff;
 $textarea-color: $white;
+$button-color: #00c5d4;
+
+body {
+    font-family: "open sans", san serif;
+
+}
+
+button {
+    background-color: $button-color;
+    color: $white;
+    display: inline-block;
+      appearance: none;
+      box-shadow: none;
+      border-radius: 0;
+      border: none;
+      padding: 5px;
+      margin: 10px 0;
+}
 
 .wrapper {
     margin: 10px;
