@@ -105,11 +105,14 @@ p{
 
 @media (min-width: 850px) {
     .url-button {
-        width: 32%;
+        width: 33%;
     }
     
     .capture-button {
-        width: 32%;
+        width: 33%;
+    }
+    .photo-button {
+        width: 33%;
     }
 }
 
@@ -131,7 +134,7 @@ p{
 }
 
 .definition-container {
-   width: 50%;
+    width: 50%;
     padding: 20px;
     background-color: $popup-bg;
     color: $popup-fontcolor;
