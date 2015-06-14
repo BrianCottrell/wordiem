@@ -6,10 +6,15 @@ $button-color: #00c5d4;
 $popup-bg: #e2ffe2;
 $popup-fontcolor: #000;
 
+html {
+    width: 100%;
+}
+
 body {
     font-family: "open sans", san serif;
 
 }
+
 
 .logotype {
     text-align: center;
@@ -19,6 +24,7 @@ body {
 }
 
 button {
+    margin: 10px 0;
     background-color: $button-color;
     color: $white;
     font-family: inherit;
@@ -28,12 +34,11 @@ button {
     border-radius: 3px;
     border: none;
     padding: 13px 23px;
-    margin: 10px;
 }
 
 .wrapper {
     margin: 10px;
-    padding: 5% 10%;
+    padding: 0 10%;
 }
 textarea {
     background-color: $primary-color;
@@ -50,8 +55,16 @@ textarea {
     padding: 10px 30px;
 }
 
+.textdiv {
+    float: left;
+    width: 100%;
+}
+
 .image-text {
     width: 100%;
+     -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     line-height: 30px;
     font-size: 1.1em;
 }
@@ -76,7 +89,10 @@ p{
     -moz-box-shadow: none;
     box-shadow: none;
     padding: 13px 20px;
-    width: 75%;
+     -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
 }
 
 .url-button {
@@ -84,17 +100,30 @@ p{
     right: 10%;
 }
 
+.capture-button {
+}
+
+@media (min-width: 850px) {
+    .url-button {
+        width: 32%;
+    }
+    
+    .capture-button {
+        width: 32%;
+    }
+}
+
 .enter-text {
-    margin-right: -20px;
-    float: right;
+    width: 100%;
+    margin: 10px 0;
 }
 
 .highlighted{
   color: $button-color;
 }
 
-.text-container {
-    width: 90%;
+.text-container, .vocabulary-list {
+    width: inherit;
     padding: 50px 60px;
     background-color: $primary-color;
     color: $textarea-color;
@@ -102,8 +131,9 @@ p{
 }
 
 .definition-container {
-   
+   width: 50%;
     padding: 20px;
     background-color: $popup-bg;
     color: $popup-fontcolor;
 }
+
