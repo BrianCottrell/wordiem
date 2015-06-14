@@ -32,7 +32,11 @@ function writeText(){
 		}
 		word.addEventListener('click', function(){
 			if(this.classList.contains('highlighted')){
+				var x = event.clientX;
+				var y = event.clientY+window.pageYOffset+10;
 				document.getElementsByClassName('definition-container')[0].style.display = 'block';
+				document.getElementsByClassName('definition-container')[0].style.left = x+'px';
+				document.getElementsByClassName('definition-container')[0].style.top = y+'px';
 				var xmlhttp = new XMLHttpRequest();
 				var url = "https://api.idolondemand.com/1/api/sync/querytextindex/v1?apikey=66c1a05f-e956-426f-a0e0-2c2f3756423f&max_page_results=1&summary=quick&text="+this.innerHTML.slice(0,this.innerHTML.length-1);
 				xmlhttp.onreadystatechange = function() {

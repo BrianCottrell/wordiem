@@ -46,7 +46,10 @@ p {
   display: inline; }
 
 .definition-container {
-  display: none; }
+  display: none;
+  position: absolute;
+  z-index: 3;
+}
 
 .url-input {
   background-color: #666;
