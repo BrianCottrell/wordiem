@@ -29,4 +29,8 @@ p {
 .definition-container {
   display: none; }
 
+.url-input {
+  background-color: #666;
+  color: #fff; }
+
 /*# sourceMappingURL=style.css.map */
