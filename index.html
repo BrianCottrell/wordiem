@@ -8,24 +8,27 @@
         <title>Wordiem</title>
         <link type="text/css" rel="stylesheet" href="style.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class = "wrapper">
             <div class="logo"></div>
-            <h1 class="logotype">Wordiem</h1>
+            <h1 class="logotype"><img src="img/logowithtype.png"></img></h1>
             <br>
             <div class="urldiv">
                 <input class='url-input'></input>
-                <button class='url-button'>Get text from url</button>
-                <a href="http://cs-server.usc.edu:28154/image_capture.html" target="_blank"><button class='capture-button'>Photograph Text</button></a>
-                <button class='photo-button'>Get text from photo</button>
+                <button class='url-button'><i class="fa fa-link"></i> Text from URL</button>
+                <a href="http://cs-server.usc.edu:28154/image_capture.html" target="_blank"><button class='capture-button'><i class="fa fa-camera"></i> Take a photo with text</button></a>
+                <button class='capture-button'><i class="fa fa-file-image-o"></i> Upload an image of text</button>
             </div>
             <br>
-            <textarea rows="10" class='image-text'>Paste text here or import it from an image</textarea>
-            <button class='enter-text'>Read your imported text</button>
+            <div class="textdiv">
+                <textarea rows="10" class='image-text'>Paste text here or import it from an image</textarea>
+            </div>
+            <button class='enter-text'><i class="fa fa-comments"></i> WORDIEM!</button>
             <br>
-            <button class='speech-button'>Text audio</button>
-            <button class='vocabulary-button'>Vocabulary</button>
+            <button class='speech-button'><i class="fa fa-volume-up"></i> Text audio</button>
+            <button class='vocabulary-button'><i class="fa fa-list-ul"></i> My vocabulary</button>
             <div class='text-container'></div>
             <br>
             <div class='definition-container'></div>
