@@ -10,3 +10,10 @@ textarea {
   width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
+
+p{
+	display: inline;
+}
+.definition-container{
+	display: none;
+}
