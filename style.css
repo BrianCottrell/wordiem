@@ -9,11 +9,10 @@ textarea {
 .image-text {
   width: 100%; }
 
-/*# sourceMappingURL=style.css.map */
+p {
+  display: inline; }
 
-p{
-	display: inline;
-}
-.definition-container{
-	display: none;
-}
+.definition-container {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */
