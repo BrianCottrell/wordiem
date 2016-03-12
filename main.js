@@ -85,7 +85,7 @@ function allLetter(inputtxt){
 		return false;  
 	}  
 } 
-document.getElementsByClassName('url-input')[0].value = 'http://www.rjionline.org/sites/default/files/images/the_text_column_should_satisfy_four_conditions.jpeg'
+document.getElementsByClassName('url-input')[0].value = 'https://www.w3.org/TR/SVGTiny12/examples/textArea01.png'
 document.getElementsByClassName('url-button')[0].addEventListener('click', function(){
 	var xmlhttp = new XMLHttpRequest();
 	var url = "https://api.idolondemand.com/1/api/sync/ocrdocument/v1?apikey=66c1a05f-e956-426f-a0e0-2c2f3756423f&url="+document.getElementsByClassName('url-input')[0].value;
